@@ -43,17 +43,172 @@ body.demo-active{background:#faf9f6;color:#26292f}body.demo-active .topbar,body.
 #demo-view .demo-primary{background:var(--course-accent);border-color:var(--course-accent);border-radius:var(--course-radius)}#demo-view .demo-primary:hover{background:var(--course-hover)}#demo-view .demo-primary:disabled{background:#e3e6eb;border-color:#d6dae2;color:#656d7b}
 #demo-view .demo-secondary,#demo-view .demo-hint summary{color:var(--course-accent)}#demo-view .demo-option{background:var(--course-surface);border-radius:var(--course-radius)}#demo-view .demo-option:not(:disabled):hover{border-color:var(--course-accent)}#demo-view .demo-option[aria-pressed=true]{background:var(--course-soft);border-color:var(--course-accent);box-shadow:0 0 0 1px var(--course-accent)}#demo-view .demo-option[aria-pressed=true] .option-letter{color:var(--course-accent)}#demo-view .demo-feedback.good{background:var(--course-soft);border-color:var(--course-accent);color:var(--course-ink)}
 #demo-view .demo-answer{border-radius:var(--course-radius);background:var(--course-surface)}#demo-view .demo-answer:focus{outline-color:var(--course-accent)}#demo-view button:focus-visible,#demo-view a:focus-visible,#demo-view summary:focus-visible,#demo-view input:focus-visible{outline-color:var(--course-accent)}#demo-view .demo-review-check input{accent-color:var(--course-accent)}#demo-view .demo-story>p[id]{font-family:var(--course-reading)}
-body.demo-active[data-course-style=friendly]{background:#faf5ed}
-#demo-view[data-course-style=friendly]{--course-ink:#342d2a;--course-muted:#6b605b;--course-line:#ddd1c5;--course-accent:#935039;--course-hover:#773c29;--course-soft:#f4e4d9;--course-radius:16px;--course-surface:#fffcf8;--course-reading:Charter,'Bitstream Charter','Sitka Text',Cambria,serif}
-#demo-view[data-course-style=friendly] .scene-opening{border-color:#e2d5c9;border-radius:24px;background:#fffcf8;box-shadow:0 12px 36px #55391e08}
-#demo-view[data-course-style=friendly] .scene-opening h1{font-family:inherit;font-weight:600;letter-spacing:-1.5px}#demo-view[data-course-style=friendly] .demo-story h1{font-family:inherit;font-weight:600}
-#demo-view[data-course-style=friendly] .opening-art{background:#ede0ce}#demo-view[data-course-style=friendly] .opening-river{border-color:#b2b9a3}#demo-view[data-course-style=friendly] .opening-window{background:#c0835d}#demo-view[data-course-style=friendly] .opening-window.second{background:#87917a}#demo-view[data-course-style=friendly] .opening-window.third{background:#f7edda}#demo-view[data-course-style=friendly] .opening-square{background:#faf4e9;border-color:#9a816a}
-#demo-view[data-course-style=friendly] .demo-option{padding:18px}#demo-view[data-course-style=friendly] .option-letter{border-radius:50%;background:#f3ebe2;text-align:center;flex-basis:27px;line-height:27px}#demo-view[data-course-style=friendly] .demo-primary{padding-inline:25px}#demo-view[data-course-style=friendly] .demo-feedback{border-radius:0 12px 12px 0}
+/* Editorial: an open journal, with an illustrated cover and a serif question column. */
+body.demo-active[data-course-style=editorial]{background:#f3f0e9}
+#demo-view[data-course-style=editorial]{--course-accent:#344b61;--course-hover:#243848;--course-line:#d4cfc3;--course-radius:0px;--course-soft:#e9edf0}
+#demo-view[data-course-style=editorial] .scene-opening{grid-template-columns:1.1fr .9fr;gap:65px;background:none;border:0;border-radius:0;overflow:visible;min-height:440px;max-width:1000px}
+#demo-view[data-course-style=editorial] .opening-copy{grid-column:1;grid-row:1;padding:26px 0;border-top:3px solid #343b42}
+#demo-view[data-course-style=editorial] .scene-opening h1{font:normal clamp(44px,5vw,64px)/1.05 Georgia,serif;letter-spacing:-2px}
+#demo-view[data-course-style=editorial] .opening-copy>p{font:20px/1.7 Georgia,serif;margin-block:28px}
+#demo-view[data-course-style=editorial] .opening-art{grid-column:2;min-height:440px;border:10px solid #fffdf8;outline:1px solid #d4cfc3;box-shadow:6px 6px 0 #ded9ce}
+#demo-view[data-course-style=editorial] .scene-reading{max-width:820px;background:#fffdf8;border:1px solid #ddd6c8;padding:28px 58px 48px;margin-top:32px}
+#demo-view[data-course-style=editorial] .scene-reading .demo-story h1{font-size:44px}
+#demo-view[data-course-style=editorial] .demo-workspace:not(.scene-finished){background:#fffdf8;border:1px solid #ddd6c8;padding:36px 30px;gap:34px;grid-template-columns:1.1fr 1fr}
+#demo-view[data-course-style=editorial] .demo-practice{padding-left:30px}
+#demo-view[data-course-style=editorial] #demo-task h2,#demo-view[data-course-style=editorial] .check-workspace h2{font:normal 30px/1.3 Georgia,serif;letter-spacing:-.65px}
+#demo-view[data-course-style=editorial] .demo-progress{font:italic 16px/1.5 Georgia,serif;border-bottom:1px solid var(--course-line);padding-bottom:13px}
+#demo-view[data-course-style=editorial] .demo-option{background:transparent;border-color:#d4cfc3;font-size:15px;padding:15px 14px}
+#demo-view[data-course-style=editorial] .demo-story{max-height:calc(100vh - 315px);min-height:250px}
+#demo-view[data-course-style=editorial] .scene-reading .demo-story{max-height:none}
+#demo-view[data-course-style=editorial] .demo-feedback{font:17px/1.65 Georgia,serif}
+
+/* Friendly: separate reading and activity cards, with generous rounded controls. */
+body.demo-active[data-course-style=friendly]{background:#f5eee4}
+#demo-view[data-course-style=friendly]{--course-ink:#342d2a;--course-muted:#6b605b;--course-line:#ddd1c5;--course-accent:#935039;--course-hover:#773c29;--course-soft:#f4e4d9;--course-radius:15px;--course-surface:#fffdfa;--course-reading:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+#demo-view[data-course-style=friendly] .scene-opening{display:flex;flex-direction:column;max-width:790px;margin-top:40px;border:0;border-radius:28px;background:#fffdfa;box-shadow:0 12px 36px #55391e0a}
+#demo-view[data-course-style=friendly] .opening-art{min-height:200px;height:200px;width:100%;background:#ede0ce}
+#demo-view[data-course-style=friendly] .opening-river{border-color:#b2b9a3;left:55%;top:-280px;transform:rotate(60deg)}
+#demo-view[data-course-style=friendly] .opening-window{background:#c0835d;left:10%;top:35px}
+#demo-view[data-course-style=friendly] .opening-window.second{background:#87917a;left:25%;top:120px}
+#demo-view[data-course-style=friendly] .opening-window.third{background:#f7edda;left:40%;top:40px}
+#demo-view[data-course-style=friendly] .opening-square{background:#faf4e9;border-color:#9a816a;right:10%;bottom:35px}
+#demo-view[data-course-style=friendly] .opening-copy{text-align:center;padding:38px 48px 42px;width:100%}
+#demo-view[data-course-style=friendly] .scene-opening h1{font:650 43px/1.16 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-1.5px}
+#demo-view[data-course-style=friendly] .opening-copy>p{max-width:550px;margin:0 auto 25px}
+#demo-view[data-course-style=friendly] .demo-story h1{font:650 31px/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-.8px}
+#demo-view[data-course-style=friendly] .demo-story>p[id]{font-size:18px;line-height:1.85}
+#demo-view[data-course-style=friendly] .demo-story.large>p[id]{font-size:23px}
+#demo-view[data-course-style=friendly] .demo-workspace:not(.scene-finished){grid-template-columns:1.15fr 1fr;gap:22px;align-items:start}
+#demo-view[data-course-style=friendly] .demo-workspace .demo-reader,#demo-view[data-course-style=friendly] .demo-practice{background:#fffdfa;border:1px solid #e6dccf;border-radius:24px;padding:26px;box-shadow:0 5px 20px #55391e05}
+#demo-view[data-course-style=friendly] .demo-reader-tools{margin-bottom:20px}
+#demo-view[data-course-style=friendly] .demo-reader-tools button{border-radius:20px;background:#f5eee4;border:0}
+#demo-view[data-course-style=friendly] .demo-progress{display:inline-block;background:#f4e4d9;color:#85432f;padding:4px 13px;border-radius:20px;font-weight:600;font-size:13px;margin-bottom:20px}
+#demo-view[data-course-style=friendly] #demo-task h2,#demo-view[data-course-style=friendly] .check-workspace h2{font-size:27px;font-weight:650;line-height:1.4}
+#demo-view[data-course-style=friendly] .demo-option{padding:17px 15px;border-color:#e3d7ca;gap:12px;box-shadow:0 2px 0 #ede4da;font-size:15px}
+#demo-view[data-course-style=friendly] .option-letter{border-radius:50%;background:#f3ebe2;text-align:center;flex-basis:28px;line-height:28px}
+#demo-view[data-course-style=friendly] .demo-primary{padding-inline:25px;min-height:50px;box-shadow:0 3px 0 #713a28}
+#demo-view[data-course-style=friendly] .demo-primary:disabled{box-shadow:none}
+#demo-view[data-course-style=friendly] .demo-practice .demo-primary{width:100%}
+#demo-view[data-course-style=friendly] .check-actions{display:block}
+#demo-view[data-course-style=friendly] .demo-feedback{border:0;border-radius:14px;padding:17px;font-size:15px}
+#demo-view[data-course-style=friendly] .demo-hint{background:#f7f0e7;border-radius:12px;padding:13px 16px}
+#demo-view[data-course-style=friendly] .scene-reading{background:#fffdfa;border-radius:26px;border:1px solid #e6dccf;max-width:800px;padding:28px 48px 40px;margin-top:32px}
+#demo-view[data-course-style=friendly] .demo-story{max-height:calc(100vh - 320px);min-height:250px}
+#demo-view[data-course-style=friendly] .scene-reading .demo-story{max-height:none}
+
+/* Minimal: a broad text column and a compact activity rail, without card containers. */
 body.demo-active[data-course-style=minimal]{background:#fff}
 #demo-view[data-course-style=minimal]{--course-ink:#20252c;--course-muted:#626973;--course-line:#e0e3e7;--course-accent:#26384e;--course-hover:#142438;--course-soft:#edf0f4;--course-radius:3px;--course-reading:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-#demo-view[data-course-style=minimal] .scene-opening{background:#fff;border-radius:3px;border-color:#e0e3e7}#demo-view[data-course-style=minimal] .scene-opening h1,#demo-view[data-course-style=minimal] .demo-story h1{font-family:inherit;font-weight:500;letter-spacing:-1px}
-#demo-view[data-course-style=minimal] .demo-story>p[id]{line-height:1.8}#demo-view[data-course-style=minimal] .opening-art{background:#e9ecef}#demo-view[data-course-style=minimal] .opening-river{border-color:#adb7c5}#demo-view[data-course-style=minimal] .opening-window{background:#ac9780}#demo-view[data-course-style=minimal] .opening-window.second{background:#7d8998}#demo-view[data-course-style=minimal] .opening-window.third{background:#ded8cf}#demo-view[data-course-style=minimal] .opening-square{background:#f5f6f7;border-color:#8993a0}
-@media(max-width:680px){.course-bar{gap:10px;padding-block:16px}.course-style-switch{width:100%;justify-content:center}.course-style-switch button{flex:1;min-height:40px}.course-level{font-size:12px}}
+#demo-view[data-course-style=minimal] .scene-opening{grid-template-columns:minmax(0,1fr) 160px;gap:60px;align-items:center;min-height:300px;max-width:900px;margin-top:100px;background:none;border:0;border-radius:0;overflow:visible}
+#demo-view[data-course-style=minimal] .opening-copy{grid-column:1;grid-row:1;padding:0}
+#demo-view[data-course-style=minimal] .scene-opening h1{font:500 56px/1.08 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-2px;max-width:600px}
+#demo-view[data-course-style=minimal] .opening-copy>p{font-size:17px;line-height:1.7;max-width:500px}
+#demo-view[data-course-style=minimal] .opening-art{grid-column:2;min-height:190px;height:190px;border-radius:2px;background:#e9ecef}
+#demo-view[data-course-style=minimal] .opening-river{border-color:#adb7c5;width:90px;height:360px;border-width:17px;left:45%;top:-130px}
+#demo-view[data-course-style=minimal] .opening-window{background:#ac9780;left:17px;top:28px;width:30px;height:43px}
+#demo-view[data-course-style=minimal] .opening-window.second{background:#7d8998;left:45px;top:112px;width:22px;height:32px}
+#demo-view[data-course-style=minimal] .opening-window.third{background:#ded8cf;left:78px;top:43px;width:22px;height:31px}
+#demo-view[data-course-style=minimal] .opening-square{background:#f5f6f7;border-color:#8993a0;width:36px;height:36px;right:15px;bottom:25px}
+#demo-view[data-course-style=minimal] .demo-workspace:not(.scene-finished){grid-template-columns:minmax(0,1.45fr) minmax(300px,1fr);gap:64px}
+#demo-view[data-course-style=minimal] .demo-practice{border:0;padding:0}
+#demo-view[data-course-style=minimal] .demo-story h1{font:500 27px/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-.7px}
+#demo-view[data-course-style=minimal] .demo-story>p[id]{font-size:18px;line-height:1.8}
+#demo-view[data-course-style=minimal] .demo-story.large>p[id]{font-size:23px}
+#demo-view[data-course-style=minimal] #demo-task h2,#demo-view[data-course-style=minimal] .check-workspace h2{font-size:23px;line-height:1.45;font-weight:550;letter-spacing:-.4px}
+#demo-view[data-course-style=minimal] .demo-progress{font-size:12px;border-top:2px solid #26384e;padding-top:14px;margin-bottom:18px}
+#demo-view[data-course-style=minimal] .demo-option{border:0;border-bottom:1px solid #e0e3e7;border-radius:0;box-shadow:none;padding:18px 8px;margin:0;font-size:15px;gap:13px;background:none}
+#demo-view[data-course-style=minimal] .demo-option[aria-pressed=true]{background:#edf0f4;box-shadow:inset 3px 0 #26384e}
+#demo-view[data-course-style=minimal] .option-letter{border:1px solid #cdd3da;flex-basis:22px;line-height:21px;border-radius:50%;text-align:center;font-size:11px}
+#demo-view[data-course-style=minimal] .demo-option[aria-pressed=true] .option-letter{background:#26384e;color:white;border-color:#26384e}
+#demo-view[data-course-style=minimal] .demo-primary{font-size:14px;min-height:44px;padding:9px 18px}
+#demo-view[data-course-style=minimal] .demo-reader-tools button{border:0;min-height:32px}
+#demo-view[data-course-style=minimal] .demo-feedback{background:none;border:0;border-top:1px solid #e0e3e7;padding:15px 0;font-size:14px;margin-top:18px}
+#demo-view[data-course-style=minimal] .demo-answer{border:0;border-bottom:1px solid #aeb7c3;background:#f7f8fa;border-radius:0;font-size:16px}
+#demo-view[data-course-style=minimal] .demo-quote{font:16px/1.65 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;border-color:#ccd3dc;color:#505a66}
+#demo-view[data-course-style=minimal] .scene-reading{max-width:660px;margin-top:38px}
+
+@media(max-width:950px){
+#demo-view[data-course-style=editorial] .scene-opening{gap:35px}
+#demo-view[data-course-style=editorial] .demo-workspace:not(.scene-finished){padding:24px 20px;gap:25px}
+#demo-view[data-course-style=friendly] .demo-workspace .demo-reader,#demo-view[data-course-style=friendly] .demo-practice{padding:20px}
+#demo-view[data-course-style=minimal] .demo-workspace:not(.scene-finished){gap:35px;grid-template-columns:1.2fr 1fr}
+}
+@media(max-width:800px){
+#demo-view[data-course-style] .demo-workspace:not(.scene-finished){grid-template-columns:1fr;gap:30px}
+#demo-view[data-course-style=editorial] .demo-practice{border:0;padding:0}
+#demo-view[data-course-style=editorial] .demo-workspace .demo-story,#demo-view[data-course-style=friendly] .demo-workspace .demo-story{max-height:360px}
+#demo-view[data-course-style=minimal] .demo-workspace .demo-reader{border-bottom:1px solid #e0e3e7}
+#demo-view[data-course-style=minimal] .demo-progress{border-top:0;padding-top:0}
+#demo-view[data-course-style=editorial] .scene-reading,#demo-view[data-course-style=friendly] .scene-reading{padding:24px}
+}
+@media(max-width:680px){
+.course-bar{gap:10px;padding-block:16px}.course-style-switch{width:100%;justify-content:center}.course-style-switch button{flex:1;min-height:40px}.course-level{font-size:12px}
+#demo-view[data-course-style=editorial] .scene-opening{display:flex;flex-direction:column;gap:25px;margin-top:32px}
+#demo-view[data-course-style=editorial] .opening-art{width:100%;min-height:215px;height:215px;order:0}
+#demo-view[data-course-style=editorial] .opening-copy{order:1;padding:23px 0 0;width:100%}
+#demo-view[data-course-style=editorial] .scene-opening h1{font-size:46px}
+#demo-view[data-course-style=editorial] .opening-copy>p{font-size:18px;margin-block:20px}
+#demo-view[data-course-style=editorial] .scene-reading .demo-story h1{font-size:34px}
+#demo-view[data-course-style=editorial] #demo-task h2,#demo-view[data-course-style=editorial] .check-workspace h2{font-size:28px}
+#demo-view[data-course-style=friendly] .scene-opening{margin-top:28px;border-radius:22px}
+#demo-view[data-course-style=friendly] .opening-copy{padding:28px 24px 32px}
+#demo-view[data-course-style=friendly] .scene-opening h1{font-size:35px}
+#demo-view[data-course-style=friendly] .opening-art{min-height:170px;height:170px}
+#demo-view[data-course-style=friendly] .opening-window.second{top:100px}
+#demo-view[data-course-style=friendly] .opening-square{width:54px;height:54px}
+#demo-view[data-course-style=minimal] .scene-opening{display:flex;flex-direction:column;align-items:flex-start;gap:28px;margin-top:40px}
+#demo-view[data-course-style=minimal] .opening-art{width:120px;min-height:140px;height:140px;order:0}
+#demo-view[data-course-style=minimal] .opening-copy{order:1}
+#demo-view[data-course-style=minimal] .scene-opening h1{font-size:42px}
+#demo-view[data-course-style=minimal] .opening-window.second{top:91px}
+#demo-view[data-course-style] .scene-reading{padding:18px 14px 30px}
+#demo-view[data-course-style=minimal] .scene-reading{padding:0}
+}
+
+/* A completion has one clear heading, a saved response and a primary next action. */
+#demo-view .demo-workspace.scene-finished{max-width:1060px;margin:60px auto 80px}
+#demo-view .scene-finished .demo-practice{padding:0;border:0;background:none;box-shadow:none;border-radius:0}
+.demo-completion{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+.completion-summary{padding-top:8px}
+.completion-art{display:flex;align-items:flex-end;gap:8px;width:150px;height:70px;margin-bottom:30px}
+.completion-art span{display:block;width:30px;height:55px;background:#d5be8a;border-radius:22px 22px 0 0}
+.completion-art span:nth-child(2){height:35px;background:#8b9fb5;border-radius:0}
+.completion-art span:nth-child(3){height:65px;background:#b8c4cf}
+.completion-art span:nth-child(4){height:35px;background:transparent;border:1px dashed #8b9fb5;border-radius:0}
+#demo-view #demo-task .demo-completion h2{font:normal 48px/1.1 Georgia,serif;letter-spacing:-1.6px;margin:0 0 22px}
+.completion-intro{font-size:17px;line-height:1.7;color:var(--course-muted);max-width:340px;margin:0}
+.completion-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:30px}
+#demo-view .completion-actions .demo-primary,#demo-view .completion-actions .demo-secondary{margin:0;width:auto}
+.completion-response{background:#fffdf8;border:1px solid var(--course-line);padding:30px 34px;min-height:330px}
+.completion-response header{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:28px;border-bottom:1px solid var(--course-line);padding-bottom:18px}
+.completion-response h3{font-size:15px;line-height:1.4;font-weight:600;margin:0}
+.completion-response header>span{font-size:12px;color:var(--course-muted)}
+.completion-prompt{font-size:14px;line-height:1.6;color:var(--course-muted);margin:0 0 18px;max-width:380px}
+#demo-view .demo-completion-answer{font:23px/1.7 Georgia,serif;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 36px;color:var(--course-ink)}
+.completion-reference{font:italic 14px/1.6 Georgia,serif;color:var(--course-muted);border-top:1px solid var(--course-line);padding-top:16px}
+.completion-reset-note{font-size:13px;color:var(--course-muted);margin:0;width:100%}
+#demo-view[data-course-style=friendly] .demo-completion{grid-template-columns:1fr;gap:30px;max-width:720px;margin:auto}
+#demo-view[data-course-style=friendly] .completion-summary{text-align:center}
+#demo-view[data-course-style=friendly] .completion-art{margin-inline:auto}
+#demo-view[data-course-style=friendly] #demo-task .demo-completion h2{font-family:inherit;font-weight:650;font-size:43px}
+#demo-view[data-course-style=friendly] .completion-intro{margin-inline:auto;max-width:420px}
+#demo-view[data-course-style=friendly] .completion-actions{justify-content:center}
+#demo-view[data-course-style=friendly] .completion-actions .demo-primary{width:auto}
+#demo-view[data-course-style=friendly] .completion-response{border-radius:24px;background:#fffdfa;padding:30px 36px}
+#demo-view[data-course-style=friendly] .completion-art span:first-child{background:#c0835d}
+#demo-view[data-course-style=friendly] .completion-art span:nth-child(2){background:#87917a}
+#demo-view[data-course-style=friendly] .completion-art span:nth-child(3){background:#d8ccb5}
+#demo-view[data-course-style=friendly] .demo-completion-answer{font-family:inherit;font-size:21px}
+#demo-view[data-course-style=minimal] .demo-completion{max-width:760px;margin:auto;grid-template-columns:1fr;gap:40px}
+#demo-view[data-course-style=minimal] .completion-art{display:none}
+#demo-view[data-course-style=minimal] #demo-task .demo-completion h2{font-family:inherit;font-weight:500;font-size:42px}
+#demo-view[data-course-style=minimal] .completion-intro{max-width:500px;font-size:16px}
+#demo-view[data-course-style=minimal] .completion-response{border:0;border-top:1px solid #dce0e5;background:none;padding:24px 0;min-height:0}
+#demo-view[data-course-style=minimal] .completion-response header{border:0;margin-bottom:15px;padding:0}
+#demo-view[data-course-style=minimal] .demo-completion-answer{font-family:inherit;font-size:20px}
+#demo-view[data-course-style=minimal] .completion-reference{border:0;font-family:inherit}
+@media(max-width:800px){.demo-completion{grid-template-columns:1fr;gap:35px}#demo-view .demo-workspace.scene-finished{margin-top:28px}.completion-intro{max-width:450px}}
+@media(max-width:480px){#demo-view #demo-task .demo-completion h2{font-size:39px}.completion-response,#demo-view[data-course-style=friendly] .completion-response{padding:24px}#demo-view[data-course-style=friendly] #demo-task .demo-completion h2{font-size:36px}.completion-response header{flex-wrap:wrap;gap:6px}.completion-art{margin-bottom:23px}}
 
 </style></head><body>
 <header class="topbar"><div><h1>Reading app UI references</h1><p>See what students read, answer and write. Choose an app, then inspect the screens.</p></div><div><div class="top-actions"><button class="quiet" id="open-log">Research notes</button></div><p class="log-button-note">10 apps with UI · 28 resources checked</p></div></header>
@@ -203,7 +358,7 @@ function render(){
 renderScene();
 $('demo-story').classList.toggle('large',s.large);$('demo-size').setAttribute('aria-pressed',s.large);$('demo-size').setAttribute('aria-label',s.large?'Use standard passage text size':'Increase passage text size');$('demo-size').textContent=s.large?'Aa −':'Aa +';
 $('demo-step-label').textContent=`${s.step} of 3`;$('demo-step-label').hidden=s.complete;
-if(s.complete){$('demo-task').innerHTML=`<h2>Lesson complete</h2><p class="demo-task-desc">Your explanation</p><p class="demo-completion-answer">${esc(s.draft)}</p><p class="demo-review-note">Writing self-review complete. No automated score.</p><button class="demo-primary" data-demo-action="revisit">Review answers</button><div><button class="demo-secondary" data-demo-action="reset">${resetPending?'Clear answers and restart':'Start again'}</button>${resetPending?'<button class="demo-secondary reset-cancel" data-demo-action="cancel-reset">Cancel</button>':''}</div>`;return}
+if(s.complete){$('demo-task').innerHTML=`<div class="demo-completion"><div class="completion-summary"><div class="completion-art" aria-hidden="true"><span></span><span></span><span></span><span></span></div><h2>Lesson complete.</h2><p class="completion-intro">Your response is saved. Revisit the story and your answers whenever you like.</p><div class="completion-actions"><button class="demo-primary" data-demo-action="revisit">Review answers <span aria-hidden="true">→</span></button><button class="demo-secondary" data-demo-action="reset">${resetPending?'Clear answers and restart':'Start again'}</button>${resetPending?'<button class="demo-secondary reset-cancel" data-demo-action="cancel-reset">Cancel</button><p class="completion-reset-note" role="status">Starting again clears your saved answers.</p>':''}</div></div><section class="completion-response" aria-labelledby="completion-response-title"><header><h3 id="completion-response-title">Your response</h3><span>Self-reviewed</span></header><p class="completion-prompt">How does moving the brushes show a change in Amira?</p><p class="demo-completion-answer">${esc(s.draft)}</p><div class="completion-reference">The unpainted square</div></section></div>`;return}
 if(s.step<3){const n=s.step,checked=s['checked'+n],selected=s['choice'+n],good=selected===correct[n];$('demo-task').innerHTML=`<h2>${n===1?'How does Amira’s attitude change?':'Which action best shows that Amira is ready to share control?'}</h2>${options()}${checked?`<div class="demo-feedback ${good?'good':''}" role="status"><strong>${good?'Correct.':'Try again.'}</strong>${feedback[n][selected]}</div>`:''}<button class="demo-primary" data-demo-action="${checked&&good?'next':'check'}" ${selected===null||checked&&!good?'disabled':''}>${checked&&good?'Continue':'Check answer'}</button>${n===2?'<button class="demo-secondary" data-demo-action="back">← Previous question</button>':''}`;return}
 $('demo-task').innerHTML=`<h2>How does moving the brushes show a change in Amira?</h2><blockquote class="demo-quote">“Then she pushed the brushes into the middle of the table.”<small>Paragraph 5</small></blockquote><label for="demo-answer" class="visually-hidden">Your explanation</label><textarea class="demo-answer" id="demo-answer" placeholder="Write your explanation…" maxlength="3000">${esc(s.draft)}</textarea><div class="demo-answer-meta"><span id="demo-word-count">${words()} words</span></div><details class="demo-hint"><summary>Show a hint</summary><p>At the start, the brushes point towards Amira. Later, they sit in the centre. Who can use them now—and how does that connect to whose ideas belong in the mural?</p></details>${error?`<p class="demo-error" role="alert">${error}</p>`:''}${s.review?`<p class="demo-review-intro">Check your explanation:</p><label class="demo-review-check"><input type="checkbox" data-demo-review="0" ${s.checks[0]?'checked':''}>I explain how Amira’s thinking changes.</label><label class="demo-review-check"><input type="checkbox" data-demo-review="1" ${s.checks[1]?'checked':''}>I connect that change to the position of the brushes.</label><details class="demo-hint"><summary>Show an example</summary><p class="demo-model">At first, Amira controls the design and keeps the brushes pointing towards herself. Moving them into the centre suggests that she is now willing to share ownership of the mural, because the tools—and the chance to contribute—are available to everyone.</p><p>A different interpretation can also work if the passage supports it. Compare the reasoning, not the exact words.</p></details><button class="demo-primary" id="demo-finish" data-demo-action="finish" ${s.checks.every(Boolean)?'':'disabled'}>Finish lesson</button><button class="demo-secondary" data-demo-action="revise">Keep revising</button>`:'<button class="demo-primary" data-demo-action="review">Review response</button>'}<button class="demo-secondary" style="display:block" data-demo-action="back">← Previous question</button>`;
 }
