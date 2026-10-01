@@ -6,7 +6,7 @@ An image-first reference library for designing a reading app. Choose an app and 
 
 ## Structure
 
-- **Try the reading demo:** an original Grade 9 fiction passage, inference and evidence questions, targeted choice feedback, and a writing/self-review flow. Open `#demo`. Drafts save locally; no account or grading service is involved.
+- **Try the reading demo:** a lesson opening, a dedicated reading page, an optional comprehension check, then passage-and-question practice and a completion scene. Includes inference and evidence questions, targeted choice feedback, and writing self-review. Open `#demo`. Drafts save locally; no account or grading service is involved.
 - **Patterns & proposed UI:** observed lesson comparisons, a proposed lesson layout, separate usability basics, and CCSS/WCAG sources.
 
 - **Learning screens:** large screenshots, short captions, source links, and previous/next controls.
