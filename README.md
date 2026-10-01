@@ -6,7 +6,7 @@ An image-first reference library for designing a reading app. Choose an app and 
 
 ## Structure
 
-- **Try the reading demo:** a focused lesson opening, an uninterrupted reading page, an optional comprehension check, then passage-and-question practice and a completion scene. The lesson has its own neutral palette and hides the research sidebar, with a Back to research link. Includes inference and evidence questions, targeted choice feedback, and writing self-review. Open `#demo`. Hints and worked examples appear on request; writing is self-reviewed. Drafts save locally; no account or grading service is involved.
+- **Try the reading demo:** a focused lesson opening, an uninterrupted reading page, an optional comprehension check, then passage-and-question practice and a completion scene. The lesson has its own neutral palette and hides the research sidebar, with a Back to research link. Includes inference and evidence questions, targeted choice feedback, and writing self-review. Open `#demo`. Hints and worked examples appear on request; writing is self-reviewed. Drafts save locally; no account or grading service is involved. Editorial, Friendly and Minimal appearance buttons change the lesson styling without resetting progress; the choice is remembered locally. Correct multiple-choice answers are locked, and advancing to an unfinished question clears any earlier unsubmitted selection.
 - **Patterns & proposed UI:** observed lesson comparisons, a proposed lesson layout, separate usability basics, and CCSS/WCAG sources.
 
 - **Learning screens:** large screenshots, short captions, source links, and previous/next controls.
