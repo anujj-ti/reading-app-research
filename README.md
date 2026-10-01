@@ -6,6 +6,8 @@ An image-first reference library for designing a reading app. Choose an app and 
 
 ## Structure
 
+- **Grade 9 UI rules:** recurring patterns, a proposed lesson layout, eight recommended requirements, and CCSS/WCAG sources.
+
 - **Learning screens:** large screenshots, short captions, source links, and previous/next controls.
 - **Course navigation:** a separate view for course menus, unit maps and opening lessons.
 - **App notes:** curriculum, provider and access details, collapsed by default.
