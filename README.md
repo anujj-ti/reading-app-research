@@ -6,14 +6,13 @@ An image-first reference library for designing a reading app. Choose an app and 
 
 ## Structure
 
-- **Grade 9 UI rules:** recurring patterns, a proposed lesson layout, eight recommended requirements, and CCSS/WCAG sources.
+- **Patterns & proposed UI:** recurring patterns, a proposed lesson layout, eight recommended requirements, and CCSS/WCAG sources.
 
 - **Learning screens:** large screenshots, short captions, source links, and previous/next controls.
-- **Course navigation:** a separate view for course menus, unit maps and opening lessons.
 - **App notes:** curriculum, provider and access details, collapsed by default.
 - **Research notes:** evidence-label definitions and 18 other resources without accessible lesson UI during the audit.
 
-The library contains 10 apps, 43 selected screenshots and 28 reviewed resources. It includes Fishtank Student previews across Grades 3–12 and six screens from McGraw Hill's shared Summit/Soar walkthrough.
+The library contains 10 apps, 37 selected screenshots and 28 reviewed resources. It includes Fishtank Student previews across Grades 3–12 and three learning screens from McGraw Hill's shared Summit/Soar walkthrough.
 
 Soar is a Grades 9–12 product, but its representative shared walkthrough shows a Grade 7 course and teacher controls. These images are labeled as publisher walkthroughs, not verified live high-school student lessons. PDFs and marketing pages are excluded from the screenshot galleries.
 
